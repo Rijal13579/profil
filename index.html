@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <title>Assignment 1</title>
+</head>
+
+<body>
+    <nav>
+        <div class="crep">
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#Product">Product</a></li>
+                <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="#Blog">Blog</a></li>
+                <li><a href="#Inventory">Inventory</a></li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
+    <div class="oppo"><section>
+        <div class="Rexus">
+            <img src="images/photo.jpeg" width="140px" alt="" class="rexus">
+        </div>
+    </section>
+
+    <section>
+        <div class="Apple">
+            <div class="apple">
+                <h2 class="div" id="ini-saya">MUHAMMAD RIJAL</h2>
+                <div class="Div">
+                    <p class="div" id="text-role">Front-End Web Development </p>
+                    <button class="div1" id="edit">Edit</button>
+                    <button class="div2">Resume</button>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <br>
+    <div class="data">
+        <table>
+            <tr>
+                <td>Availablity</td>
+                <td style="padding-left: 80px;">:</td>
+                <td id="text-availability">Full Time</td>
+            </tr>
+            <tr>
+                <td>Usia</td>
+                <td style="padding-left: 80px;">:</td>
+                <td id="text-usia">18</td>
+            </tr>
+            <tr>
+                <td>Lokasi</td>
+                <td style="padding-left: 80px;">:</td>
+                <td id="text-lokasi">Palangka Raya, Indonesia</td>
+            </tr>
+            <tr>
+                <td>Pengalaman</td>
+                <td style="padding-left: 80px;">:</td>
+                <td id="text-pengalaman">4</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td style="padding-left: 80px;">:</td>
+                <td id="text-email">rijalkps94@gmail.com</td>
+            </tr>
+        </table>
+    </div></div>
+        
+   
+    <br><br>
+    <form id="nyk"  onsubmit="handleSubmit(event)">
+        <label for="nama" >Nama</label>
+        <input id="input-nama" type="text" name="nama" value="">
+    
+        <br><label for="role">Role</label> <br/>
+        <input id="input-role" type="text" name="Role"  value="" >
+    
+        <br><label for="availability">Availability</label> <br/>
+        <input id="input-availability" type="text" name="Availability" value="" >
+    
+        <br><label for="age">Usia</label> <br/>
+        <input id="input-usia" type="text" name="Age" value="" >
+    
+        <br><label for="lokasi">Lokasi</label> <br/>
+        <input id="input-lokasi" type="text" name="Lokasi" value="" >
+    
+        <br><label for="pengalaman">Pengalaman</label> <br/>
+        <input id="input-pengalaman" type="number" name="pengalaman" value="" >
+    
+        <br><label for="email">Email</label> <br/>
+        <input id="input-email" type="email" name="Email" value="" >
+    
+        <br><input class="submit" id="btn-submit" type="submit" value="SUBMIT"><br/>
+      </form>
+      <script>
+        var textNama = document.getElementById('ini-saya')
+        var textRole =  document.getElementById('text-role')
+        var textAvailablity = document.getElementById('text-availability')
+        var textUsia = document.getElementById('text-usia')
+        var textLokasi = document.getElementById('text-lokasi')
+        var textPengalaman = document.getElementById('text-pengalaman')
+        var textEmail = document.getElementById('text-email')
+        document.getElementById('input-nama').value = textNama.innerText
+        document.getElementById('input-role').value = textRole.innerText
+        document.getElementById('input-availability').value = textAvailablity.innerText
+        document.getElementById('input-usia').value = textUsia.innerText
+        document.getElementById('input-lokasi').value = textLokasi.innerText
+        document.getElementById('input-pengalaman').value = textPengalaman.innerText
+        document.getElementById('input-email').value = textEmail.innerText
+        function handleSubmit(event) {
+            var inputNama = document.getElementById('input-nama')
+            var inputRole = document.getElementById('input-role')
+            var inputAvailability = document.getElementById('input-availability')
+            var inputUsia = document.getElementById('input-usia')
+            var inputLokasi = document.getElementById('input-lokasi')
+            var inputPengalaman = document.getElementById('input-pengalaman')
+            var inputEmail = document.getElementById('input-email')
+            localStorage.setItem('nama', inputNama.value)
+            localStorage.setItem('role', inputRole.value)
+            localStorage.setItem('availability', inputAvailability.value)
+            localStorage.setItem('usia', inputUsia.value)
+            localStorage.setItem('lokas', inputLokasi.value)
+            localStorage.setItem('pengalaman', inputPengalaman.value)
+            localStorage.setItem('email', inputEmail.value)
+            document.getElementById('ini-saya').innerText = inputNama.value
+            document.getElementById('text-role').innerText = inputRole.value
+            document.getElementById('text-availability').innerText = inputAvailability.value
+            document.getElementById('text-usia').innerText = inputUsia.value
+            document.getElementById('text-lokasi').innerText = inputLokasi.value
+            document.getElementById('text-pengalaman').innerText = inputPengalaman.value
+            document.getElementById('text-email').innerText = inputEmail.value
+            const text1 = document.getElementById('nyk')
+            const display = text1.style.display
+            if (display == 'block') {
+                console.log(display)
+                text1.style.display = 'none'
+            } else {
+                console.log(display)
+                text1.style.display = 'block'
+            }
+                event.preventDefault()
+        }   
+
+        const buttonEdit = document.getElementById('edit')
+        buttonEdit.addEventListener('click',function() {
+            const shift = document.getElementById('nyk')
+            const display = shift.style.display
+            if (display == 'block') {
+                console.log(display)
+                shift.style.display = 'none'
+            } else {
+                console.log(display)
+                shift.style.display = 'block'
+            }
+                console.log(display, 'display')
+            })
+      </script>
+
+</body>
+</html>
